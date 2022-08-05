@@ -49,7 +49,7 @@ const Second: NextPage = (props: PropsType) => {
   };
 
   return (
-    <div className="flex flex-col bg-gray-200 h-screen w-screen">
+    <div className="flex flex-col bg-gray-100">
       <div className="mb-3 xl:w-96">
         <div className="input-group relative flex items-stretch w-full mb-4">
           <input
@@ -73,14 +73,14 @@ const Second: NextPage = (props: PropsType) => {
         </div>
       )}
       {!processing && (
-        <div className="flex flex-row items-start justify-start w-full h-full flex-wrap">
+        <div className="flex flex-row items-start justify-start w-full h-full flex-wrap min-w-0">
           {missions?.map((mission) => (
             <div
               key={mission.id}
-              className="flex flex-col m-1 border border-blue-500 rounded-md w-64 h-72 shadow-lg"
+              className="flex flex-col m-1 rounded-md w-64 h-72 shadow-lg"
             >
-              <div className="bg-gray-200 h-1/2 rounded-md"></div>
-              <div className="m-1 h-1/2 bg-white">
+              <div className="bg-gray-200 h-1/2 rounded-md min-w-0"></div>
+              <div className="m-1 h-1/2 bg-white min-w-0">
                 <div className="flex flex-row m-1 justify-start items-center font-semibold">
                   {mission.missionName}
                   <button
@@ -92,10 +92,10 @@ const Second: NextPage = (props: PropsType) => {
                     <IoMdLink />
                   </button>
                 </div>
-                <div className="flex m-1 flex-row text-sm text-gray-300">
+                <div className="flex m-1 flex-row text-sm text-gray-300 min-w-0">
                   {mission.rocketName}
                 </div>
-                <div className="flex m-1 flex-row text-xs text-gray-800 overflow-auto h-16 scrollbar-hide">
+                <div className="flex m-1 flex-row text-xs text-gray-800 overflow-auto h-16 scrollbar-hide min-w-0">
                   {mission.description}
                 </div>
               </div>
